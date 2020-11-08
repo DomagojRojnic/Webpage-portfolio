@@ -1,0 +1,252 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;                             /*razmak izmedju redaka*/ 
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+/* Global */
+.container {
+  width: 80%;    /*sredisnjih 80% ekrana*/
+  margin: auto;  /*centriranje*/
+  overflow: hidden;  /*content hidden ako ode s ekrana, ostaje unutar stranice, da se ne pojavi scrollbar*/
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+.dark {
+  padding: 15px;
+  background: #35424a;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+}
+
+/* Header */
+header {
+  background: #35424a;
+  color: #ffffff;     /*text color*/
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: darkcyan 3px solid;
+}
+
+header ul a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li{
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding a{
+  color: #ffffff;
+  float: left;
+  text-decoration: none;
+  
+}
+
+header #branding h1{
+  margin: 0;
+}
+
+header nav{
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight, header .current a{
+  color: darkcyan;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #cccccc;
+  font-weight: bold;
+}
+
+/* Slideshow */
+#slider {
+  overflow: hidden;
+}
+
+#slider figure{
+  position: relative;
+  width: 400%;
+  margin: 0;
+  left: 0;
+  animation: 15s slider infinite;       /*traje 15sekundi, zove se slider, nikad ne prestaje*/
+}
+
+#slider figure img {
+  width: 25%;                     /*100%/4slike*/
+  float: left;
+}
+
+#slideshow{
+  width: 100%; 
+  max-height: 550px;
+}
+
+@keyframes slider {             /*animiranje slidera*/
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  30% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  55% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  100%{
+    left: -300%;
+  }
+}
+
+/* Boxes */
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box img{
+  width: 90px;
+}
+
+#boxes .container{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.box{
+  flex-shrink: 1; 
+  padding: 10px;
+  width: 18%;
+}
+
+/* Sidebar */
+#side_ceo{
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+}
+
+#side_leader{
+  float: right;
+  width: 30%;
+  margin-top: 10px;
+}
+
+/* Article */
+#article_about{
+  float: left;
+  width: 65%;
+  margin-top: 10px;
+}
+
+#contact{
+  width: 25%;
+  margin-right: 20px;
+}
+
+#contact div.dark{
+  height: 500px;
+}
+
+.dark h3{
+  overflow-wrap: break-word;
+}
+
+#contacts .container{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#contact div.dark{
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+#inputText {
+  width: 90%;
+  padding: 5px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: darkcyan;
+  text-align: center;
+}
+
+/* Media Queries */
+@media(max-width: 768px){  /*velicina tableta*/
+ header #branding,
+ header #branding a,  
+ header nav, 
+ header nav a,
+ header nav li,
+ #boxes .box,
+ section article#article_about,
+ section aside#side_ceo,
+ section aside#side_leader,
+ section #contact{
+   float: none;
+   text-align: center;
+   width: 100%;
+ }
+ header{
+   padding-bottom: 20px;
+ }
+ #contact div.dark{
+  height: auto;
+ }
+ section article#article_about h1{
+   margin-top: 30px;
+ }
+ #boxes .container{
+   display: unset;
+ }
+}
+
+@media(max-width:1180px){
+  #contacts .container{
+   display: unset;
+  }
+  #contact{
+   float: none;
+   text-align: center;
+   width: 100%;
+  }
+  #contact div.dark{
+    margin-top: 10px;
+    height: auto;
+  }
+  #contact form input[type="text"],
+  #contact form input[type="email"]{
+    width: 90%;
+    margin-bottom: 5px;
+  }
+}
